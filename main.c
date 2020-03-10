@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 15:25:53 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/11 00:33:28 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/11 00:50:55 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	printf("   %d\n", printf("   printf: %*c\n", -6, 'C'));
-	printf("%d\n", ft_printf("ft_printf: %*c\n", -6, 'C'));
+	printf("   %d\n", printf("   printf: %0*%\n", 12));
+	printf("%d\n", ft_printf("ft_printf: %0*%\n", 12));
 	return (0);
 }

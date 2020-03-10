@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 14:53:29 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/10 22:35:20 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/11 00:48:48 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void			ft_unsigned_int(void);
 void			ft_hexadecimal(void);
 void			ft_percent(void);
 void			ft_spaces(void);
+void			ft_zeros(void);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 
