@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 15:31:12 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/09 20:09:18 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/10 17:31:55 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 
 void	ft_precision(void)
 {
-	if (g_vars.str = '.')
+	if (*g_vars.str == '.')
 	{
 		g_vars.precision = 1;
 		g_vars.str++;
-		if (g_vars.str == '*')
+		if (*g_vars.str == '*')
 		{
 			g_vars.precision_value = va_arg(g_vars.ap, int);
 			g_vars.str++;
 		}
-		while (g_vars.str >= '0' && g_vars.str <= '9')
+		while (*g_vars.str >= '0' && *g_vars.str <= '9')
 		{
 			g_vars.precision_value = (g_vars.precision_value * 10)
 			+ (*g_vars.str - 48);

@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 14:51:48 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/09 19:58:05 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/10 16:51:29 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,22 @@ void	init_vars(void)
 {
 	g_vars.format_position = 0;
 	g_vars.width = 0;
-	g_vars.zero = 0;
 	g_vars.minus = 0;
+	g_vars.zero = 0;
+	g_vars.precision = 0;
+	g_vars.precision_value = 0;
+	g_vars.ret = 0;
+}
+
+/*
+** It reinitializes values after they are used to treat a parameter
+*/
+
+void	reinit_vars(void)
+{
+	g_vars.width = 0;
+	g_vars.minus = 0;
+	g_vars.zero = 0;
 	g_vars.precision = 0;
 	g_vars.precision_value = 0;
 	g_vars.ret = 0;
@@ -34,20 +48,24 @@ void	init_vars(void)
 int		ft_printf(const char *format, ...)
 {
 	init_vars();
+	// g_vars = (t_vars){0, 0, 0, 0, 0, 0, 0, 0};
 	g_vars.str = (char *)format;
 	va_start(g_vars.ap, format);
 	while (*g_vars.str)
 	{
-		while (*g_vars.str == '%')
+		if (*g_vars.str == '%')
 		{
 			g_vars.str++;
 			if (!ft_parameters())
 				return (g_vars.ret);
-			if (!g_vars.str)
-				return (g_vars.ret);
+			reinit_vars();
+			// g_vars = (t_vars){0, 0, 0, 0, 0, 0, 0, 0};
 		}
-		write(1, g_vars.str++, 1);
-		g_vars.ret++;
+		else
+		{
+			write(1, g_vars.str++, 1);
+			g_vars.ret++;
+		}
 	}
 	va_end(g_vars.ap);
 	return (g_vars.ret);

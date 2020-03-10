@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 14:53:29 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/09 20:45:53 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/10 17:07:50 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,9 @@ typedef struct	s_vars
 	va_list		ap;
 	char		*str;
 	int			format_position;
-	// char		specifier;
 	int			width;
-	int			zero;
 	int			minus;
+	int			zero;
 	int			precision;
 	int			precision_value;
 	int			ret;
@@ -38,7 +37,6 @@ int				ft_printf(const char *format, ...);
 int				ft_parameters(void);
 void			ft_width(void);
 void			ft_precision(void);
-void			ft_specifier(void);
 void			ft_character(void);
 void			ft_string(void);
 void			ft_pointer(void);
