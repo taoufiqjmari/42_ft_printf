@@ -6,9 +6,11 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 16:29:11 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/10 17:40:31 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/10 21:57:15 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 void	ft_hexadecimal(void)
 {

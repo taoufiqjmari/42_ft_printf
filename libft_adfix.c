@@ -1,17 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_percent.c                                       :+:      :+:    :+:   */
+/*   libft_adfix.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/09 20:26:29 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/10 21:57:39 by tjmari           ###   ########.fr       */
+/*   Created: 2020/03/10 22:21:35 by tjmari            #+#    #+#             */
+/*   Updated: 2020/03/10 22:37:40 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_percent(void)
+void	ft_spaces(void)
 {
+	while (g_vars.spaces > 0)
+	{
+		ft_putchar_fd(' ', 1);
+		g_vars.spaces--;
+	}
 }

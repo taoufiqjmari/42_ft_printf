@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 14:51:48 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/10 16:51:29 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/10 22:44:22 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 void	init_vars(void)
 {
-	g_vars.format_position = 0;
 	g_vars.width = 0;
 	g_vars.minus = 0;
 	g_vars.zero = 0;
 	g_vars.precision = 0;
 	g_vars.precision_value = 0;
+	g_vars.spaces = 0;
 	g_vars.ret = 0;
 }
 
@@ -38,7 +38,7 @@ void	reinit_vars(void)
 	g_vars.zero = 0;
 	g_vars.precision = 0;
 	g_vars.precision_value = 0;
-	g_vars.ret = 0;
+	g_vars.spaces = 0;
 }
 
 /*
@@ -48,7 +48,6 @@ void	reinit_vars(void)
 int		ft_printf(const char *format, ...)
 {
 	init_vars();
-	// g_vars = (t_vars){0, 0, 0, 0, 0, 0, 0, 0};
 	g_vars.str = (char *)format;
 	va_start(g_vars.ap, format);
 	while (*g_vars.str)
@@ -57,14 +56,13 @@ int		ft_printf(const char *format, ...)
 		{
 			g_vars.str++;
 			if (!ft_parameters())
-				return (g_vars.ret);
+				return (0);
 			reinit_vars();
-			// g_vars = (t_vars){0, 0, 0, 0, 0, 0, 0, 0};
 		}
 		else
 		{
-			write(1, g_vars.str++, 1);
-			g_vars.ret++;
+			ft_putchar_fd(*g_vars.str, 1);
+			g_vars.str++;
 		}
 	}
 	va_end(g_vars.ap);

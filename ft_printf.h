@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 14:53:29 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/10 17:07:50 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/10 22:35:20 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,17 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include "Libft/libft.h"
 
 typedef struct	s_vars
 {
 	va_list		ap;
 	char		*str;
-	int			format_position;
 	int			width;
 	int			minus;
 	int			zero;
 	int			precision;
 	int			precision_value;
+	int			spaces;
 	int			ret;
 }				t_vars;
 t_vars			g_vars;
@@ -44,5 +43,8 @@ void			ft_integer(void);
 void			ft_unsigned_int(void);
 void			ft_hexadecimal(void);
 void			ft_percent(void);
+void			ft_spaces(void);
+void			ft_putchar_fd(char c, int fd);
+void			ft_putstr_fd(char *s, int fd);
 
 #endif

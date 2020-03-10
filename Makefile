@@ -6,7 +6,7 @@
 #    By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/09 15:05:38 by tjmari            #+#    #+#              #
-#    Updated: 2020/03/10 17:38:16 by tjmari           ###   ########.fr        #
+#    Updated: 2020/03/10 22:54:20 by tjmari           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ FLAGS = -Wall -Wextra -Werror -c
 
 SRC = ft_printf.c ft_parameters.c ft_width.c ft_precision.c \
 ft_character.c ft_string.c ft_pointer.c ft_integer.c \
-ft_unsigned_int.c ft_hexadecimal.c ft_percent.c
+ft_unsigned_int.c ft_hexadecimal.c ft_percent.c \
+libft_adfix.c libft_put.c \
 
 OBJ = $(SRC:.c=.o)
 
