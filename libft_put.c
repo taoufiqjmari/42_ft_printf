@@ -6,19 +6,19 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/10 21:34:46 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/10 21:36:59 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/11 17:49:07 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar(char c)
 {
-	write(fd, &c, 1);
+	write(1, &c, 1);
 	g_vars.ret++;
 }
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr(char *s)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ void	ft_putstr_fd(char *s, int fd)
 	{
 		while (s[i])
 		{
-			ft_putchar_fd(s[i], fd);
+			ft_putchar(s[i]);
 			i++;
 		}
 	}

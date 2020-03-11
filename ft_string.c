@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 16:27:15 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/11 13:25:35 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/11 17:51:57 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	string_left(char *string, int len)
 	char	*temp;
 
 	temp = ft_substr(string, 0, len);
-	ft_putstr_fd(temp, 1);
+	ft_putstr(temp);
 	free(temp);
 	temp = NULL;
 	ft_spaces();
@@ -34,10 +34,15 @@ void	string_right(char *string, int len)
 
 	g_vars.zero == 1 ? ft_zeros() : ft_spaces();
 	temp = ft_substr(string, 0, len);
-	ft_putstr_fd(temp, 1);
+	ft_putstr(temp);
 	free(temp);
 	temp = NULL;
 }
+
+/*
+** The second if() is for a special case
+** ft_printf("%.s", (char *) number);
+*/
 
 void	ft_string(char *string)
 {
@@ -45,15 +50,23 @@ void	ft_string(char *string)
 
 	if (!string)
 		string = "(null)";
-	len = ft_strlen(string);
-	if (g_vars.precision == 1 && g_vars.precision_value < len)
-		len = g_vars.precision_value;
-	g_vars.spaces = g_vars.width - len;
-	if (g_vars.spaces < 0)
-		g_vars.spaces = 0;
-	if (g_vars.minus == 1)
-		string_left(string, len);
+	if (g_vars.precision_value == 0 && g_vars.precision != 0)
+	{
+		g_vars.spaces = g_vars.width;
+		ft_spaces();
+		ft_putstr("");
+	}
 	else
-		string_right(string, len);
-	string = NULL;
+	{
+		len = ft_strlen(string);
+		if (g_vars.precision == 1 && g_vars.precision_value < len)
+			len = g_vars.precision_value;
+		g_vars.spaces = g_vars.width - len;
+		if (g_vars.spaces < 0)
+			g_vars.spaces = 0;
+		if (g_vars.minus == 1)
+			string_left(string, len);
+		else
+			string_right(string, len);
+	}
 }

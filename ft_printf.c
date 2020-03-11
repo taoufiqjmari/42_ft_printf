@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 14:51:48 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/10 22:44:22 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/11 17:51:15 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		ft_printf(const char *format, ...)
 		}
 		else
 		{
-			ft_putchar_fd(*g_vars.str, 1);
+			ft_putchar(*g_vars.str);
 			g_vars.str++;
 		}
 	}

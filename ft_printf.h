@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 14:53:29 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/11 12:44:45 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/11 17:49:30 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void			ft_spaces(void);
 void			ft_zeros(void);
 size_t			ft_strlen(const char *s);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
-void			ft_putchar_fd(char c, int fd);
-void			ft_putstr_fd(char *s, int fd);
+void			ft_putchar(char c);
+void			ft_putstr(char *s);
 
 #endif
