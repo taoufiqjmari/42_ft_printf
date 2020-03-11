@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 15:25:23 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/10 17:25:09 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/11 12:32:20 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_parameters(void)
 	if (*g_vars.str == 'c')
 		ft_character();
 	if (*g_vars.str == 's')
-		ft_string();
+		ft_string(va_arg(g_vars.ap, char *));
 	if (*g_vars.str == 'p')
 		ft_pointer();
 	if (*g_vars.str == 'd' || *g_vars.str == 'i')
