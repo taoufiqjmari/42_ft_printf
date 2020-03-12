@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 15:31:12 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/10 17:31:55 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/12 16:14:19 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 void	ft_precision(void)
 {
+	g_vars.precision = 0;
+	g_vars.precision_value = 0;
 	if (*g_vars.str == '.')
 	{
 		g_vars.precision = 1;

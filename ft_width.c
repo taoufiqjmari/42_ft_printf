@@ -6,7 +6,7 @@
 /*   By: tjmari <tjmari@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/09 15:30:59 by tjmari            #+#    #+#             */
-/*   Updated: 2020/03/10 17:30:31 by tjmari           ###   ########.fr       */
+/*   Updated: 2020/03/12 16:13:15 by tjmari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_flags(void)
 {
+	g_vars.minus = 0;
+	g_vars.zero = 0;
 	while (*g_vars.str == '-' || *g_vars.str == '0')
 	{
 		if (*g_vars.str == '-')
@@ -37,6 +39,7 @@ void	ft_flags(void)
 void	ft_width(void)
 {
 	ft_flags();
+	g_vars.width = 0;
 	if (*g_vars.str == '*')
 	{
 		g_vars.width = va_arg(g_vars.ap, int);
